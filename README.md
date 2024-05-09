@@ -14,7 +14,7 @@ Simple dashboard that displays the status of all docker containers running on a 
 ### Docker
 
 1. Install Docker
-2. Pull image from: `<tbd>` / Alternatively build the docker image locally using the `Dockerfile` or use the `docker-compose.yml` file
+2. Pull image from: `<tbd>` / Alternatively build the docker image locally using the `Dockerfile` or use the `docker-compose.yml` file (`docker compose up -d --force-recreate --build container-status`)
 3. Create a `docker-compose.yml`
 4. Run `docker compose up -d`
 
@@ -25,6 +25,7 @@ services:
     container_name: container-status
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./.docker:/home/user
     ports:
       - 42069:42069
 ```
