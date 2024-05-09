@@ -14,7 +14,7 @@ Simple dashboard that displays the status of all docker containers running on a 
 ### Docker
 
 1. Install Docker
-2. Pull image from: `<tbd>` / Alternatively build the docker image locally using the `Dockerfile`
+2. Pull image from: `<tbd>` / Alternatively build the docker image locally using the `Dockerfile` or use the `docker-compose.yml` file
 3. Create a `docker-compose.yml`
 4. Run `docker compose up -d`
 
