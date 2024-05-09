@@ -1,11 +1,5 @@
+use crate::models::Container;
 use askama::Template;
-
-pub struct Container {
-    pub id: String,
-    pub description: String,
-}
-
-// MODELS ^^^ |||| TEMPLATES VVV
 
 #[derive(Template)]
 #[template(path = "index.html")]

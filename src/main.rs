@@ -1,8 +1,10 @@
+mod models;
 mod templates;
 
 use axum::{routing::get, Router};
+use models::Container;
 use rs_docker::Docker;
-use templates::{Container, Containers, Index};
+use templates::{Containers, Index};
 use tokio::net::TcpListener;
 use tower_http::services::ServeDir;
 
@@ -40,7 +42,7 @@ async fn containers() -> Containers {
         };
     })
     .await
-    .expect("Task panicked");
+    .expect("Task panicked: \"docker.get_containers()\"");
     println!("{:?}", docker_containers);
 
     let containers = docker_containers
@@ -48,7 +50,8 @@ async fn containers() -> Containers {
         .map(|x| {
             return Container {
                 id: x.Id.to_string(),
-                description: x.Names.join(", ").to_string(),
+                name: x.Names.join(", ").to_string(),
+                status: x.Status.to_string(),
             };
         })
         .collect();
