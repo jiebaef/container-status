@@ -25,7 +25,6 @@ services:
     container_name: container-status
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./.docker:/home/user
     ports:
       - 42069:42069
 ```
