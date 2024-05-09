@@ -1,0 +1,15 @@
+<div id="container">
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody id="container-content">
+			{% for container in containers %}
+			{% include "container.html" %}
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
